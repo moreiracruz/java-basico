@@ -42,13 +42,7 @@ public class BankApplication {
     private static Integer readIntegerInput(Scanner scanner, String prompt) {
         while (true) {
             try {
-                System.out.print(prompt);
-                String input = scanner.nextLine().trim();
-
-                if (!input.isEmpty()) {
-                    return Integer.parseInt(input);
-                }
-                System.out.println("Invalid value! Please try again!");
+                return Integer.parseInt(readInput(scanner, prompt));
             } catch (NumberFormatException e) {
                 System.out.println("Invalid value! Please try again!");
             }
@@ -58,13 +52,7 @@ public class BankApplication {
     private static Double readDoubleInput(Scanner scanner, String prompt) {
         while (true) {
             try {
-                System.out.print(prompt);
-                String input = scanner.nextLine().trim();
-
-                if (!input.isEmpty()) {
-                    return Double.parseDouble(input);
-                }
-                System.out.println("Invalid value! Please try again!");
+                return Double.parseDouble(readInput(scanner, prompt));
             } catch (NumberFormatException e) {
                 System.out.println("Invalid value! Please try again!");
             }
